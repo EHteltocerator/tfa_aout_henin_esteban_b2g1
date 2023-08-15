@@ -3,11 +3,11 @@
     --bg-color: #F3F9FF;
     --text-color: #0A1170;
     --deco-color: #7AB4C1;
+    --contrast-color: #ffa500;
 
     --first-color: #403F3A;
     --second-color:  #2C2E2A;
     --third-color: #C1BDB3;
-    --contrast-color: #E3D5C1;
     --neutral-color: #6E7273;
 }
 
@@ -93,7 +93,7 @@ body {
           height: 100%;
           width: 105%;
           
-          background-color: orange;
+          background-color: var(--contrast-color);
           opacity: 30%;
           z-index: -1;
           transform: scaleX(1);
@@ -108,7 +108,7 @@ body {
         }
         
         &:hover {
-          color: orange;
+          color: var(--contrast-color);
           
           &::after, &::before {
             transform: scaleX(0);
@@ -148,7 +148,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 
     &__link {
         align-self: end;
@@ -206,6 +206,44 @@ body {
         }
     }
 
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    counter-reset: li;
+    grid-column: 1/-1;
+}
+
+.question {
+    width: 100%;
+    height: auto;
+
+    font-weight: 600;
+
+    background-color: var(--text-color);
+    color: var(--bg-color);
+
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+    counter-increment: li;
+
+    &::before {
+        content: counter(li);
+        color: var(--contrast-color);
+        font-size: 2rem;
+
+        font-family: "Permanent Marker", sans-serif;
+
+        position: absolute;
+        top: -2rem;
+        left: -.5rem;
+
+        transform: rotate(-15deg);
+    }
 }
 
 .picture {
