@@ -182,6 +182,7 @@ body {
   gap: 2rem;
   counter-reset: li;
   grid-column: 1/-1;
+  margin-bottom: 1rem;
 }
 
 .question {
@@ -205,6 +206,21 @@ body {
   top: -2rem;
   left: -0.5rem;
   transform: rotate(-15deg);
+}
+
+.answers {
+  grid-column: 1/-1;
+  cursor: pointer;
+  border-bottom: solid 2px var(--text-color);
+  margin-bottom: 2rem;
+}
+.answers__title {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.answers__title::marker {
+  color: var(--contrast-color);
 }
 
 .picture__img {
@@ -311,6 +327,13 @@ body {
   .partie {
     width: 1280px;
     padding: 8rem 2rem;
+  }
+  .questions {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .question {
+    width: 40%;
   }
   .wrapper--logo {
     display: flex;
