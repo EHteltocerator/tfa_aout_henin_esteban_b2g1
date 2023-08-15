@@ -2,6 +2,8 @@
 
     --bg-color: #F3F9FF;
     --text-color: #0A1170;
+    --deco-color: #7AB4C1;
+
     --first-color: #403F3A;
     --second-color:  #2C2E2A;
     --third-color: #C1BDB3;
@@ -50,7 +52,7 @@ body {
 .nav {
     grid-column: 1;
     grid-row: 1;
-    background-color: red;
+    border-right: solid .2rem var(--deco-color);
 
     height: 100vh;
     width: 100%;
@@ -68,182 +70,52 @@ body {
     display: none;
 }
 
-.text--colored {
-    color: var(--contrast-color);
-}
-
-.text--heavy {
-    font-weight: 500;
-}
-
-.picture__author {
-    font-family: "Inter", sans-serif;
-}
-
 .footer {
     background-color: var(--second-color);
 }
 
-// Achevez moi svp... 1 journée après une année de cours et je sais toujours pas faire un putain de menu de merde... WE NEED MORE CODE GET RID OF DESIGN MOOOORE COOOOODE PLS //
+.link {
+        font-size: .8rem;
+        
+        position: relative;
 
-// .header {
-//     background-color: var(--neutral-color);
-//     position: fixed;
-//     width: 100%;
-//     height: 4rem;
-//     z-index: 100;
-// }
-
-// .nav {
-//     position: relative;
-//     background-color: var(--neutral-color);
-
-
-//     &__list {
-//         list-style-type: none;
-//         position: absolute;
-//         width: 100vw;
-//         height: 100vh;
-//         overflow: hidden;
-//         background-color: var(--second-color);
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-around;
-//         align-items: center;
-//         left: 0;
-//         top: 0;
-//         //transform: translateY(-100%);
-//     }
-
-//     &__link {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         font-size: 2rem;
-//         font-family: "Bebas Neue",sans-serif;
-//         background: url("../images/btn.svg") center no-repeat;
-//         width: 50%;
-//         height: auto;
-//         aspect-ratio: 2/1;
-
-//         & a {
-//             display: block;
-//             width: 100%;
-//             height: 100%;
-//         }
-
-//         &:hover {
-//             color: var(--second-color);
-//         }
-//     }
-// }
-
-// menu essai jsp combien tamer help sos tamer le css jpp oskour oui non COOOOOOOOOOOOOOOOOOOODE //
-
-
-.navbar {
-    position: fixed;
-    right: 0;
-    margin: 2rem;
-    z-index: 100;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navbtn {
-    border: none;
-    background: none;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    filter: drop-shadow(0 0 4px var(--contrast-color));
-
-    &--mode {
-        position: fixed;
-        margin: 2rem;
-        z-index: 100;
-    }
-
-    &__svg {
-        width: 6rem;
-        height: auto;
-        grid-row: 1;
-        grid-column: 1;
-
-        &--mode {
-            width: 3rem;
+        width: fit-content;        
+        
+        &::after, &::before {
+          
+          content: "";
+          
+          position: absolute;
+          top: 0;
+          left: 0;
+      
+          display: block;
+          height: 100%;
+          width: 105%;
+          
+          background-color: orange;
+          opacity: 30%;
+          z-index: -1;
+          transform: scaleX(1);
+          transition: transform .2s;
+          transform-origin: left;
+          transition-timing-function: ease-in;
+         
         }
-
-        &--sun {
-            fill: var(--second-color);
+        
+        &::before {
+          height: 10%;
         }
-    }
-
-    .navbtn__svg--mode:hover .navbtn__svg--sun {
-        fill: var(--contrast-color);
-    }
-
-    &__text {
-        text-align: center;
-        grid-column: 1;
-        grid-row: 1;
-        z-index: 2;
-        color: white;
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 1.5rem;
-
-        &--small {
-            font-size: 1rem;
+        
+        &:hover {
+          color: orange;
+          
+          &::after, &::before {
+            transform: scaleX(0);
+            transition: transform 0s; //Forcing the time taken to get from "normal state" to "hover state" to 0 second, so even if "mouseLeave" happens the animation will look the same (and the way intended) for sure. 
+          }
         }
-    }
-
-    &:hover &__text {
-        color: var(--contrast-color);
-    }
-
-    &:hover &__fond {
-        fill: var(--second-color);
-    }
-}
-
-
-.navbtn__contourun {
-    fill: #555352
-}
-
-.navbtn__fond {
-    fill: #626364
-}
-
-.navbtn__contourdeux {
-    fill: #2b2d29
-}
-
-.nav__list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: .5rem;
-}
-
-.navlink {
-    visibility: hidden;
-    transform: translateY(-1rem);
-    transition: all 0s;
-}
-
-.navlink--open {
-    transform: translateY(0);
-    visibility: visible;
-    transition: all .2s;
-}
-
-
+      }
 
 // Mobile First bb //
 
@@ -260,13 +132,26 @@ body {
 .partie {
     background-image: url("../images/bg.svg");
     padding-top: 4rem;
-    width: 360px;
+    width: 375px;
     padding: 4rem 1rem;
     margin: 0 auto;
     box-sizing: border-box;
 
     &:first-of-type {
         padding-top: 10rem;
+    }
+}
+
+.intro {
+    grid-column: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 2rem;
+
+    &__link {
+        align-self: end;
     }
 }
 
@@ -281,8 +166,8 @@ body {
     }
 
     &__title {
-        grid-row: 1;
         grid-column: 1 / -1;
+        margin-bottom: 2rem;
 
         &--big {
             font-size: 4.5rem;
@@ -290,12 +175,26 @@ body {
             margin-bottom: 4rem;
         }
 
+        &--small {
+
+            font-size: 2rem;
+
+        }
+
     }
 
     &__text {
-        margin-bottom: 2rem;
-        grid-row: 3;
+        margin-bottom: 4rem;
         grid-column: 1 / -1;
+
+        &--intro {
+            line-height: 1.4;
+        }
+
+        &--intro {
+            margin-bottom: .5rem;
+        }
+
     }
 
     &__picture {
@@ -390,6 +289,23 @@ body {
     }
 }
 
+@media screen and (max-width:720px) {
+
+    .allwrap {
+        display: block;
+        position: relative;
+    }
+
+    .nav {
+        position: absolute;
+        background-color: rebeccapurple;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+
+    }
+}
+
 @media screen and (min-width:720px) {
 
     html {
@@ -463,6 +379,10 @@ body {
 
             &--final {
                 grid-column: 1/-3;
+            }
+
+            &--intro {
+                grid-column: 2/-1;
             }
         }
 
