@@ -1,5 +1,7 @@
 :root {
-    --text-color: #fff;
+
+    --bg-color: #F3F9FF;
+    --text-color: #0A1170;
     --first-color: #403F3A;
     --second-color:  #2C2E2A;
     --third-color: #C1BDB3;
@@ -35,17 +37,13 @@ html {
 }
 
 body {
-    background-color: var(--first-color);
+    background-color: var(--bg-color) ;
+    background-image: url("../images/bg.svg");
+    background-size: auto 1.5rem;
 }
 
 .hidden {
     display: none;
-}
-
-
-.title {
-    font-family: "Bebas Neue", sans-serif;
-    letter-spacing: .2rem;
 }
 
 .text--colored {
@@ -227,6 +225,18 @@ body {
 
 // Mobile First bb //
 
+.title {
+    font-family: "Permanent Marker", sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+
+    &--big {
+        font-size: 4.5rem;
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+}
+
 .logo {
     margin-bottom: 5rem;
 }
@@ -283,17 +293,6 @@ body {
         }
     }
 
-}
-
-.title {
-    font-size: 3rem;
-    line-height: 1;
-
-    &--big {
-        font-size: 4rem;
-        text-align: center;
-        margin-bottom: 4rem;
-    }
 }
 
 .picture {
