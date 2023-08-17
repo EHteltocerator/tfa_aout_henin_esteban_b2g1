@@ -52,15 +52,13 @@ body {
   grid-column: 1;
   grid-row: 1;
   border-right: solid 0.2rem var(--deco-color);
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 
 .main {
   grid-column: 2;
   grid-row: 1;
-  width: 100%;
-  height: 100vh;
 }
 
 .hidden {
@@ -168,16 +166,8 @@ body {
 }
 .section__text--intro {
   line-height: 1.4;
-}
-.section__text--intro {
   margin-bottom: 0.5rem;
-}
-.section__picture {
-  grid-column: 1/-1;
-  background-color: var(--first-color);
-}
-.section__picture--small {
-  grid-column: -1/-3;
+  font-weight: 300;
 }
 
 .questions {
@@ -240,17 +230,14 @@ body {
   color: var(--contrast-color);
 }
 
-.picture__img {
-  width: 100%;
+.solutions {
+  margin-bottom: 2rem;
+}
+
+.solution::before {
+  content: url(../images/fleur.svg);
+  width: 2rem;
   height: auto;
-  mix-blend-mode: overlay;
-}
-.picture__img--noblend {
-  mix-blend-mode: normal;
-}
-.picture__author {
-  font-size: 0.7rem;
-  text-align: end;
 }
 
 .partie--footer {
@@ -307,16 +294,17 @@ body {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1280px) {
   .allwrap {
     display: block;
     position: relative;
   }
   .nav {
+    height: 100vh;
     position: fixed;
-    background-color: rebeccapurple;
     top: 0;
     left: 0;
+    background-color: rebeccapurple;
     transform: translateX(-100%);
   }
 }
@@ -326,15 +314,6 @@ body {
   }
   .partie {
     width: 720px;
-  }
-  .picture {
-    grid-column: 2/-1;
-  }
-  .section__text--small {
-    grid-column: 1/3;
-  }
-  .section__picture--small {
-    grid-column: -1/-2;
   }
   .footer::after {
     height: 75px;
@@ -380,22 +359,7 @@ body {
   .section__text {
     grid-column: 2/4;
   }
-  .section__text--small {
-    grid-column: 3/5;
-  }
-  .section__text--final {
-    grid-column: 1/-3;
-  }
   .section__text--intro {
-    grid-column: 2/-1;
-  }
-  .section__picture {
-    grid-column: -1/-3;
-  }
-  .section__picture--small {
-    grid-column: -1/-2;
-  }
-  .section__picture--final {
     grid-column: 2/-1;
   }
   .footer::after {
