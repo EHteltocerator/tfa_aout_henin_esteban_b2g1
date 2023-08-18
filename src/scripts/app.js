@@ -26,7 +26,7 @@ titres.forEach((titre) => {
     gsap.from(titre, {duration: .2, opacity: 0, x: -100, scrollTrigger: {trigger: titre, start: "bottom bottom"}});
 });
 
-for (let i = 0; i < titres.length; i++) {
+for (let i = 0; i < titres.length-1; i++) {
     ScrollTrigger.create({trigger: titres[i], start: "top bottom",
 
     onEnter: (e) => {

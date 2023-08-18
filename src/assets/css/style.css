@@ -90,7 +90,7 @@ body {
 
 .partie {
   padding-top: 4rem;
-  width: 375px;
+  width: 360px;
   padding: 4rem 1rem;
   margin: 0 auto;
   box-sizing: border-box;
@@ -142,6 +142,7 @@ body {
 }
 
 .questions {
+  list-style-type: none;
   counter-reset: li;
   grid-column: 1/-1;
   margin-bottom: 1rem;
@@ -244,6 +245,7 @@ body {
 }
 
 .solutions {
+  list-style-type: none;
   margin-bottom: 2rem;
 }
 
@@ -265,9 +267,11 @@ body {
   color: var(--bg-color);
 }
 .footer__list {
+  grid-column: 1/-1;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1rem;
 }
@@ -290,7 +294,7 @@ body {
 
 .nav {
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
