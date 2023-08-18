@@ -120,7 +120,6 @@ body {
 }
 
 .partie {
-    background-image: url("../images/bg.svg");
     padding-top: 4rem;
     width: 375px;
     padding: 4rem 1rem;
@@ -184,9 +183,6 @@ body {
 }
 
 .questions {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     counter-reset: li;
     grid-column: 1/-1;
     margin-bottom: 1rem;
@@ -203,8 +199,10 @@ body {
 
     box-sizing: border-box;
     padding: 1rem;
+    margin-bottom: 2rem;
     border-radius: 5px;
     position: relative;
+
     counter-increment: li;
 
     box-shadow: var(--contrast-color) 3px 3px 10px;
@@ -432,12 +430,11 @@ body {
     }
 
     .questions {
-        flex-wrap: wrap;
-        flex-direction: row;
+        grid-column: 3/-1;
     }
 
-    .question {
-        width: 40%;
+    .answers {
+        grid-column: 3/-1;
     }
 
     .besoin {

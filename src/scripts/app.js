@@ -10,9 +10,10 @@ console.log(gsap.version);
 var titres = document.querySelectorAll("h2");
 
 titres.forEach((titre) => {
-    gsap.from(titre, {duration: .2, opacity: 0, x: -100, scrollTrigger: {trigger: titre, start: "top bottom"}});
+    gsap.from(titre, {duration: .2, opacity: 0, x: -100, scrollTrigger: {trigger: titre, start: "bottom bottom"}});
 });
 
 var head = document.querySelector("h1");
 
-gsap.from(head, {duration: 1, opacity: 0})
+gsap.from(head, {duration: 1, opacity: 0});
+
