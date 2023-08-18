@@ -5,8 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-console.log(gsap.version);
-
 var titres = document.querySelectorAll("h2");
 var navLinks = document.querySelectorAll(".nav__link");
 var navBtn = document.querySelector(".nav__btn");
