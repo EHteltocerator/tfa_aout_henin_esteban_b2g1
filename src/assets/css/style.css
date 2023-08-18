@@ -21,7 +21,6 @@ button {
 
 a {
   text-decoration: none;
-  font-style: italic;
   color: inherit;
 }
 
@@ -38,15 +37,12 @@ body {
   background-size: auto 1.5rem;
 }
 
-.allwrap {
-  display: grid;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-  grid-template-columns: 1fr 4fr;
-}
-
 .hidden {
   display: none;
+}
+
+.ui__text {
+  font-weight: 600;
 }
 
 .link {
@@ -266,6 +262,9 @@ body {
   margin-bottom: 1rem;
   color: var(--bg-color);
 }
+.footer__title--ui {
+  background-color: var(--text-color);
+}
 .footer__list {
   grid-column: 1/-1;
   list-style-type: none;
@@ -276,12 +275,14 @@ body {
   margin-bottom: 1rem;
 }
 .footer__link {
+  font-family: "Inter", sans-serif;
   color: var(--bg-color);
 }
 .footer__link:hover {
   color: var(--contrast-color);
 }
 .footer__copyright {
+  font-family: "Inter", sans-serif;
   padding-bottom: 1rem;
   grid-column: 1/-1;
   color: var(--contrast-color);
