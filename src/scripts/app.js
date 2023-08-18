@@ -9,6 +9,18 @@ console.log(gsap.version);
 
 var titres = document.querySelectorAll("h2");
 var navLinks = document.querySelectorAll(".nav__link");
+var navBtn = document.querySelector(".nav__btn");
+var nav = document.querySelector(".nav");
+
+    navBtn.addEventListener("click", (e) => {
+        nav.classList.toggle("nav--open");
+    })
+    
+    navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            nav.classList.remove("nav--open");
+        })
+    });
 
 titres.forEach((titre) => {
     gsap.from(titre, {duration: .2, opacity: 0, x: -100, scrollTrigger: {trigger: titre, start: "bottom bottom"}});
@@ -29,6 +41,16 @@ for (let i = 0; i < titres.length; i++) {
             e.classList.remove("nav__link--active");
         });
         navLinks[i].classList.add("nav__link--active");
+    },
+
+    onLeaveBack: (e) => {
+        navLinks.forEach((e) => {
+            e.classList.remove("nav__link--active");
+        });
+
+        if (!i == 0) {
+            navLinks[i-1].classList.add("nav__link--active");
+        }
     }
 
 })
