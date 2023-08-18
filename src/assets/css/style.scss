@@ -228,20 +228,27 @@ body {
     margin-bottom: 2rem;
 
     position: relative;
+    overflow: hidden;
+
+    &[open] {
+        overflow: visible;
+    }
 
     &::after {
-        content: "placeholder";
+        z-index: -1;
+        display: block;
+        width: 4.5rem;
+        pointer-events: none;
         position: absolute;
         top: 0;
-        right: 50%;
-        transform: translateX(100px);
+        left: 0%;
         opacity: 0;
-        transition: all 0;
+        transition: all 0s;
 
     }
 
     &:hover::after {
-        transform: translateX(0px);
+        transform: translateX(150px);
         opacity: 1;
         transition: transform .2s, opacity .4s;
     }
@@ -274,6 +281,67 @@ body {
         transform: rotate(-45deg);
     }
 
+}
+
+
+.ketupa::after {
+    content: url("../images/ketupa.svg");
+}
+
+.galea::after {
+    content: url("../images/galea.svg");
+}
+
+.chickaree::after {
+    content: url("../images/chickaree.svg");
+}
+
+.badak::after {
+    content: url("../images/badak.svg");
+}
+
+.sapajou::after {
+    content: url("../images/sapajou.svg");
+}
+
+.saimiri::after {
+    content: url("../images/sapajou.svg");
+}
+
+.havana::after {
+    content: url("../images/havana.svg");
+}
+
+.xerus::after {
+    content: url("../images/xerus.svg");
+}
+
+.hermine::after {
+    content: url("../images/hermine.svg");
+}
+
+.ara::after {
+    content: url("../images/ara.svg");
+}
+
+.lemming::after {
+    content: url("../images/lemming.svg");
+}
+
+.ourebi::after {
+    content: url("../images/ourebi.svg");
+}
+
+.palomino::after {
+    content: url("../images/palomino.svg");
+}
+
+.phao::after {
+    content: url("../images/phao.svg");
+}
+
+.chipmunk::after {
+    content: url("../images/chipmunk.svg");
 }
 
 .besoins {
@@ -382,8 +450,8 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 45px;
+        height: 45px;
         background-color: var(--text-color);
         color: var(--bg-color);
         font-family: "Barlow", sans-serif;
@@ -403,7 +471,7 @@ body {
 
             background-color: var(--contrast-color);
 
-            & .nav__burger {
+            & .nav__burger, .nav__burger::after, .nav__burger::before  {
                 background-color: var(--text-color);
             }
         }
@@ -411,10 +479,28 @@ body {
 
     &__burger {
         display: block;
-        height: 3px;
-        width: 25px;
-        background-color: var(--bg-color);
-        border-radius: 10px;
+        position: relative;
+
+        &, &::after, &::before {
+            height: 3px;
+            width: 25px;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+        }
+
+        &::after, &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        &::after {
+            top: 6px;
+        }
+
+        &::before {
+            bottom: 6px;
+        }
     }
 
     &__list {
@@ -431,6 +517,21 @@ body {
         font-family: "Permanent Marker", sans-serif;
         font-size: 2rem;
         color: var(--text-color);
+        position: relative;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: "";
+
+            display: block;
+            width: 100%;
+            height: 5px;
+            transform: scaleX(0);
+            transition: all .5s;
+            transform-origin: left;
+        }
 
         &:hover {
             color: var(--contrast-color);
@@ -438,6 +539,16 @@ body {
 
         &--active {
             color: var(--contrast-color);
+
+            &::after {
+
+                background-color: var(--contrast-color);
+
+                transform: rotate(-1deg);
+
+                transform: scaleX(1);
+
+            }
         }
     }
 }
